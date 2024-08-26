@@ -1,0 +1,87 @@
+@fontePrincipal: Roboto, sans-serif;
+@fonteDoTitulo: Lobster, cursive;
+@corDoTexto: #ffffff;
+@corDeFundo: #002aff; //#eb3b5a
+@corTextoDoBotao: #000;
+@corDoFundoDoBotao: #f7b731;
+
+//Reset Universal com *
+* {
+  padding: 0; //Remove o espaçamento interno
+  margin: 0; // Remove o espaçamento externo
+  border: 0; //Remove a borda
+  box-sizing: border-box; //Define que o tamanho total de um elemento (width e height) inclui o padding e a borda
+}
+
+//em -> é relativo ao tamanho da fonte do elemento pai imediato.
+//3em -> ajustando o tamanho da fonte de um elemento para três vezes o tamanho da fonte do seu elemento pai.
+//rem (root em) é sempre relativo ao tamanho da fonte definido no elemento html (ou raiz).
+//1rem = 16px
+
+html {
+  //  font-size: 62.5%: Essa configuração ajusta o tamanho da fonte padrão de 16px (100%) para 10px (62.5%).
+  //  O benefício aqui é tornar mais intuitiva a conversão de unidades relativas como rem.
+  //  Com essa configuração, 1rem equivale a 10px, facilitando cálculos e tornando o design mais consistente,
+  //  especialmente em layouts responsivos.
+  font-size: 62.5%; // font-size: 10px;
+}
+
+body {
+  font-family: @fontePrincipal;
+  font-size: 1.8rem; //1.8rem corresponde a 18px.
+  line-height: 1.4; //define que a altura da linha será 1.4 vezes o tamanho da fonte. Ou seja 18px * 1.4 = 25.2px
+  color: @corDoTexto;
+  background-color: @corDeFundo;
+}
+
+h1 {
+  font-family: @fonteDoTitulo;
+  font-size: 6rem; //60px
+}
+
+main {
+  max-width: 96rem; //960px -> Isso significa que, independentemente do tamanho da tela, o main não excederá 960px de largura.
+  width: 100%; //Define que o elemento main deve ocupar 100% da largura disponível dentro do seu contêiner pai.
+  //No entanto, essa largura será limitada pela max-width, ou seja, o main vai se expandir até 100% do seu contêiner, mas nunca ultrapassará 960px.
+
+  margin: 0 auto;
+  font-size: 3.2rem; //32px
+  text-align: center;
+}
+
+button {
+  padding: 1.6rem; //16px
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 2rem; //20px
+  margin-top: 1.6rem; //16px
+  border-radius: 0.8rem; //8px
+  background-color: @corDoFundoDoBotao;
+  color: @corTextoDoBotao;
+  font-family: @fontePrincipal;
+}
+
+input {
+  display: block;
+  margin: 1.6rem auto 0;
+  font-size: 3.2rem; //32px
+  max-width: 12rem; //120px
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  color: #fff;
+  border-bottom: 0.6rem solid #fff;
+}
+
+.resultado {
+  padding: 1.6rem;
+  margin-top: 12rem;
+  border: 0.8rem dotted #fff;
+  display: none;
+
+  span {
+    font-weight: bold;
+    font-size: 4.8rem;
+    display: block;
+  }
+}
